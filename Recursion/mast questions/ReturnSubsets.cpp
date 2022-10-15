@@ -1,7 +1,6 @@
 #include<iostream>
-#include<limits.h>
-
 using namespace std;
+
 int RetSub(int arr[],int size, int Output[][20])
 {
     if(size==0)
@@ -10,16 +9,11 @@ int RetSub(int arr[],int size, int Output[][20])
         
         return 1; 
     }
-    int temp = arr[0] ;
-    for(int i=1; i<size;i++)
-    {
-        arr[i-1] = arr[i] ;
-    }
-    int size2 = RetSub(arr, size-1, Output) ;
+    int size2 = RetSub(arr+1, size-1, Output) ;
     for(int i = 0; i<size2; i++)
     {
         Output[size2+i][0] = Output[i][0] + 1 ;
-        Output[size2+i][1] = temp ;
+        Output[size2+i][1] = arr[0] ;
         for(int j = 0; j<Output[i][0]; j++)
         {
             Output[size2+i][j+2] = Output[i][j+1] ;
