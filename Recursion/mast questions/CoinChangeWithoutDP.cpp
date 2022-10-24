@@ -18,8 +18,6 @@ int main()
 {
     int coins[] = {1,2,3} ;
     cout << coin_change(6, coins, 3, 0) ;
-    // 4th args is same as 1st
-    // 5 is always zero
     return 0;
 }
 // 4: 1111 112 13 22 
