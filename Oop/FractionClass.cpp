@@ -44,6 +44,23 @@ class Fraction{
         cout << "Added\n" ;
         Simplify() ;
     } 
+    // Better Functionality
+    // NO new Obj created, NO new changes allowed in Obj
+    void SecureAdd(Fraction const &Obj)
+    {
+        if(this->denominator == Obj.denominator)
+        {
+            this->numerator += Obj.numerator ;
+        }
+        else
+        {
+            this->numerator = this->numerator*Obj.denominator + Obj.numerator*this->denominator ;
+            this->denominator = this->denominator * Obj.denominator ;
+
+        }
+        cout << "Added\n" ;
+        Simplify() ;
+    }
 };
 int main()
 {
