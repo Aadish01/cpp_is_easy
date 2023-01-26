@@ -46,14 +46,14 @@ class Stack
             return data[nextIndex] ;
         }
         else
-            return INT_MIN ;
+            return 0 ;
     }
     T top()
     {
         if(!IsEmpty())
             return data[nextIndex-1] ;
         else 
-            return INT_MIN  ;
+            return 0  ;
     }
     void print()
     {
