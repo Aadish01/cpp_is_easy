@@ -18,7 +18,7 @@ template<typename t>
 class StackUsingLL
 {
     Node<t> *head ;
-    Node<t> *tail ;
+
     int size ;
     public:
 
@@ -26,45 +26,26 @@ class StackUsingLL
     {
         size = 0 ;
         head = NULL ;
-        tail = NULL ;
     }
     void push(t data)
     {
-        Node<t> *N = new Node<t>(data) ;
-        if(IsEmpty())
-            {
-                head = N ;
-                tail = N ;
-                size++ ;
-                return ;
-            }
-        tail -> next = N ;
-        tail = N ;
+        Node<t> *newNode = new Node<t>(data) ;
+        newNode -> next = head ; 
+        head = newNode ;
         size++ ;
     }
     t pop()
     {
         if(IsEmpty())
             return 0 ;
-        if(size==1)
-        {
-            t dt = head -> data ;
-            tail = NULL ;
-            head = NULL ;
-            size-- ;
-            return dt ;
-        }
-        t dt = tail -> data ;
-        tail = head ;
+        t dt = head -> data ;
+        head = head -> next ;
         size-- ;
-        while(tail->next->next != NULL)
-            tail = tail -> next ;
-        tail -> next = NULL ;
         return dt ;
     }
     t top()
     {
-        return tail-> data ;
+        return head-> data ;
     }
     int Size()
     {
