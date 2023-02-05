@@ -68,3 +68,10 @@ int CountNodes(TreeNode<T> *root)
     }
     return counter ;
 }
+template<typename T>
+void Destruct(TreeNode<T> *root)
+{
+    for(int i=0; i<root->children.size(); i++)
+        Destruct(root->children[i]) ;
+    delete root ;
+}
