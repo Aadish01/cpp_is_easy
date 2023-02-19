@@ -1,0 +1,15 @@
+1. Level Order
+    ->
+    -->
+    ---->
+
+2. Pre Order
+    Node ->  left -> right
+
+3. Post Order
+    left -> right -> Node
+
+4. In Order
+    left -> Node -> right
+
+For All Binary Tree
